@@ -1,13 +1,51 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, Dimensions, Button} from 'react-native';
+import { FlatList, ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
+
+const width = Dimensions.get('window').width;
 
 const HomeScreen = () => {
+    
     return(
-        <View>
-            <Text>HomeScreen</Text>
+        <View style={styles.container}>
+            <ScrollView>
+                <FlatList>
+
+                </FlatList>
+            </ScrollView>
+            <View style={styles.nav}>
+                <TouchableOpacity>
+                    <Text style={styles.navText}>Main</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Text style={styles.navText}>Brands</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Text style={styles.navText}>Models</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Text style={styles.navText}>Countries</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    nav: {
+        // position: "absolute",
+        bottom: 0,
+        flexDirection: 'row',
+        zIndex: 999,
+        justifyContent: "space-between",
+        width: width,
+        height: 50,
+        backgroundColor: '#448aff',
+    },
+    navText: {
+        fontSize: 15,
+        color: '#eee',
+        padding: 15,
+    }
+});
 
 export default HomeScreen;
