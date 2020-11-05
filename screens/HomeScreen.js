@@ -6,14 +6,10 @@ import Navbar from '../components/navbar';
 const width = Dimensions.get('window').width;
 
 const HomeScreen = (props) => {
+    const navigation = props;
     return(
         <View>
-            <ScrollView>
-                <FlatList>
-
-                </FlatList>
-            </ScrollView>
-            <Navbar props={props} />
+            <Navbar props={navigation} />
         </View>
     )
 }

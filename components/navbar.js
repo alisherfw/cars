@@ -5,12 +5,14 @@ import { FlatList, ScrollView, TouchableOpacity } from 'react-native-gesture-han
 const width = Dimensions.get('window').width;
  
 const Navbar = ({props}) => {
+    // const navigation = props;
+    // console.log(props); 
     return(
             <View style={styles.nav}>
                 <TouchableOpacity>
                     <Text style={styles.navText}>Main</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => props.navigation.navigate('Brand')}>
                     <Text style={styles.navText}>Brands</Text>
                 </TouchableOpacity>
                 <TouchableOpacity>
