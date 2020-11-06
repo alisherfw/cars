@@ -1,12 +1,10 @@
 import React from 'react';
 import {View, StyleSheet, Text, Dimensions, Button} from 'react-native';
-import { FlatList, ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const width = Dimensions.get('window').width;
  
 const Navbar = ({props}) => {
-    // const navigation = props;
-    // console.log(props); 
     return(
             <View style={styles.nav}>
                 <TouchableOpacity>
