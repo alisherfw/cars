@@ -13,10 +13,10 @@ const Navbar = ({props}) => {
                 <TouchableOpacity onPress={() => props.navigation.navigate('Brand')}>
                     <Text style={styles.navText}>Brands</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => props.navigation.navigate('Model')}>
                     <Text style={styles.navText}>Models</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => props.navigation.navigate('Country')}>
                     <Text style={styles.navText}>Countries</Text>
                 </TouchableOpacity>
             </View>

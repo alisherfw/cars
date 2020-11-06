@@ -1,14 +1,15 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Text} from 'react-native';
 import Navbar from '../components/navbar';
 
-const HomeScreen = (props) => {
+const CountryScreen = (props) => {
     return(
         <View>
+            <Text>CountryScreen</Text>
             <Navbar props={props} />
         </View>
     )
 }
 const styles = StyleSheet.create({});
 
-export default HomeScreen;
+export default CountryScreen;

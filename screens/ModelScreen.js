@@ -1,13 +1,13 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 
-const BrandScreen = (props) => {
+const ModelScreen = (props) => {
     return(
         <View>
-            <Text>BrandScreen</Text>
+            <Text>ModelScreen</Text>
         </View>
     )
 }
 const styles = StyleSheet.create({});
 
-export default BrandScreen;
+export default ModelScreen;
