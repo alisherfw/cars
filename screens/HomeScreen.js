@@ -20,11 +20,12 @@ const HomeScreen = (props) => {
                 isLoading ? (
                     <ActivityIndicator />
                 ) : (
-                <FlatList 
+                <FlatList
                 data={data}
                 keyExtractor={({id}, index) => id}
                 renderItem={({item}) => (
-                    <TouchableOpacity>
+                    <TouchableOpacity 
+                    style={styles.item}>
                         <Text style={styles.text}>
                         {item.brand}
                         </Text>
@@ -44,10 +45,16 @@ const styles = StyleSheet.create({
         fontSize: 25,
         height: 60,
         marginLeft: 10,
-        marginTop: 10
+        marginTop: 10,
     },
     container: {
         marginBottom: '10%'
+    },
+    item: {
+        borderColor: 'silver',
+        borderWidth: 1,
+        marginHorizontal: 5,
+        marginBottom: 0,
     }
 });
 

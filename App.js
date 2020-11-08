@@ -15,7 +15,7 @@ const navigator = createStackNavigator({
 }, {
   initialRouteName: 'Home',
   defaultNavigationOptions: {
-    title: 'Cars'
+    title: 'All Cars'
   }
 });
 
