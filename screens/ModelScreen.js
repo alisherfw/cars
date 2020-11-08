@@ -1,30 +1,48 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, FlatList, Text, ActivityIndicator, TouchableOpacity} from 'react-native';
 
 const ModelScreen = () => {
 
     const [data, setData] = useState([]);
+    const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users/1')
+        fetch('https://raw.githubusercontent.com/matthlavacka/car-list/master/car-list.json')
         .then(response => response.json())
-        .then(json => setData(json));
+        .then(json => setData(json))
+        .then(setLoading(false));
     }, []);
 
     return(
         <View>
-            <Text style={styles.text}>Name: {data.name}</Text>
-            <Text style={styles.text}>Email: {data.email}</Text>
-            <Text style={styles.text}>Username: {data.username}</Text>
+            {
+                isLoading ? (
+                    <ActivityIndicator />
+                ) : (
+                <FlatList 
+                data={data}
+                keyExtractor={({id}, index) => id}
+                renderItem={({item}) => (
+                    <TouchableOpacity>
+                        <Text style={styles.text}>
+                        {item.brand}
+                        </Text>
+                    </TouchableOpacity>
+                    
+                )}
+                />                    
+                )
+            }
+            
         </View>
     )
 }
 const styles = StyleSheet.create({
     text: {
         fontSize: 25,
-        alignSelf: "center",
-        justifyContent: "center",
-
+        height: 60,
+        marginLeft: 10,
+        marginTop: 10
     }
 });
 

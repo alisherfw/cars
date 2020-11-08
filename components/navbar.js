@@ -25,7 +25,7 @@ const Navbar = ({props}) => {
 }
 const styles = StyleSheet.create({
     nav: {
-        // position: "absolute",
+        position: "absolute",
         bottom: 0,
         flexDirection: 'row',
         zIndex: 999,
