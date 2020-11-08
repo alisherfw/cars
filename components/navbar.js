@@ -5,18 +5,19 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 const width = Dimensions.get('window').width;
  
 const Navbar = ({props}) => {
+    const {navigation} = props;
     return(
             <View style={styles.nav}>
                 <TouchableOpacity>
                     <Text style={styles.navText}>Main</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => props.navigation.navigate('Brand')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Brand')}>
                     <Text style={styles.navText}>Brands</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => props.navigation.navigate('Model')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Model')}>
                     <Text style={styles.navText}>Models</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => props.navigation.navigate('Country')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Country')}>
                     <Text style={styles.navText}>Countries</Text>
                 </TouchableOpacity>
             </View>
