@@ -25,7 +25,7 @@ const ModelScreen = () => {
                 renderItem={({item}) => (
                     <TouchableOpacity>
                         <Text style={styles.text}>
-                        {item.brand}
+                            {item.models}
                         </Text>
                     </TouchableOpacity>
                     

@@ -5,7 +5,7 @@ import Navbar from '../components/navbar';
 const HomeScreen = (props) => {
     const [data, setData] = useState([]);
     const [isLoading, setLoading] = useState(true);
-
+//https://raw.githubusercontent.com/vega/vega/master/docs/data/cars.json
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/matthlavacka/car-list/master/car-list.json')
         .then(response => response.json())
@@ -24,10 +24,9 @@ const HomeScreen = (props) => {
                 data={data}
                 keyExtractor={({id}, index) => id}
                 renderItem={({item}) => (
-                    <TouchableOpacity 
-                    style={styles.item}>
+                    <TouchableOpacity style={styles.item} >
                         <Text style={styles.text}>
-                        {item.brand}
+                          {item.brand}
                         </Text>
                     </TouchableOpacity>
                     
@@ -55,7 +54,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         marginHorizontal: 5,
         marginBottom: 0,
-    }
+    },
 });
 
 export default HomeScreen;
