@@ -1,12 +1,13 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
-import Navbar from '../components/navbar';
 
 const CountryScreen = (props) => {
+    const name = (props.navigation.state.params.name);
+    const code = (props.navigation.state.params.code);
     return(
         <View>
-            <Text>CountryScreen</Text>
-            <Navbar props={props} />
+            <Text>NAME: {name}</Text>
+            <Text>CODE: {code}</Text>
         </View>
     )
 }
