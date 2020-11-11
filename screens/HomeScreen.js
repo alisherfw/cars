@@ -15,7 +15,7 @@ const HomeScreen = (props) => {
     }, []);
 
     return(
-        <View>
+        <View style={styles.View}>
             <View style={styles.container}>
             {
                 <FlatList
@@ -68,8 +68,11 @@ const styles = StyleSheet.create({
         height: 60,
         marginLeft: 10,
         marginTop: 10,
-        color: "#448aff"
+        color: "#311b92"
     },
+    // View: {
+    //     backgroundColor: "#311b92"
+    // },
     name: {
         fontSize: 20,
         marginHorizontal: 10,

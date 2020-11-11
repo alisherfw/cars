@@ -28,8 +28,8 @@ const CountryScreen = (props) => {
     const [region, setRegion] = useState({
         latitude: latitude,
         longitude: longitude,
-        latitudeDelta: 0.03,
-        longitudeDelta: 0.03
+        latitudeDelta: 0.01,
+        longitudeDelta: 0.01
     });
 
     return(
@@ -37,9 +37,13 @@ const CountryScreen = (props) => {
             <MapView
                 style={styles.mapView}
                 region={region} 
-                mapType={"satellite"}
+                // customMapStyle={mapStyle}
+                mapType={"hybrid"}
                 >
-                    {/* <Marker coordinate={{ latitude: latitude, longitude: longitude }} /> */}
+                    <Marker 
+                    coordinate={{ latitude: latitude, longitude: longitude }} 
+                    pinColor="blue"
+                    />
                 </MapView>
             <View style={styles.container}>
             <View style={styles.itemView}>
@@ -55,7 +59,7 @@ const CountryScreen = (props) => {
             <View style={styles.itemView} >
                 <Text style={styles.text}> LAT: </Text>
                 <Text style={styles.item}> {lat}</Text>
-                <Text style={{fontSize: 18, marginLeft: 50, backgroundColor: "#ccc"}}> LON: </Text>
+                <Text style={{fontSize: 24, marginLeft: 50, backgroundColor: "#ccc"}}> LON: </Text>
                 <Text style={styles.item}> {lon}</Text>
             </View>
 
@@ -135,6 +139,7 @@ const CountryScreen = (props) => {
 const styles = StyleSheet.create({
     container: {
         margin: 10,
+        backgroundColor: "#eee"
     },
     mapView: {
         width: '95%',
@@ -148,11 +153,12 @@ const styles = StyleSheet.create({
         backgroundColor: "#ddd"
     },
     text: {
-        fontSize: 24,
-        backgroundColor: "#ccc"
+        fontSize: 20,
+        // backgroundColor: "#ccc"
     },
     item: {
         fontSize: 24,
+        color: "#311b92"
     }
 });
 

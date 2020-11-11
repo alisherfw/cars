@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         width: width,
         height: 50,
-        backgroundColor: '#448aff',
+        backgroundColor: '#311b92',
     },
     navText: {
         fontSize: 15,
