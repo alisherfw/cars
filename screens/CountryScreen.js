@@ -28,8 +28,8 @@ const CountryScreen = (props) => {
     const [region, setRegion] = useState({
         latitude: latitude,
         longitude: longitude,
-        latitudeDelta: 0.1,
-        longitudeDelta: 0.1
+        latitudeDelta: 0.03,
+        longitudeDelta: 0.03
     });
 
     return(
