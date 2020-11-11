@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, StyleSheet, Text, ScrollView} from 'react-native';
+import MapView, {Marker} from 'react-native-maps';
 
 const CountryScreen = (props) => {
     const name = (props.navigation.state.params.name);
@@ -21,8 +22,25 @@ const CountryScreen = (props) => {
     const direct_flights = (props.navigation.state.params.direct_flights);
     const carriers = (props.navigation.state.params.carriers);
 
+    var latitude = parseFloat(lat);
+    var longitude = parseFloat(lon);
+
+    const [region, setRegion] = useState({
+        latitude: latitude,
+        longitude: longitude,
+        latitudeDelta: 0.1,
+        longitudeDelta: 0.1
+    });
+
     return(
         <ScrollView>
+            <MapView
+                style={styles.mapView}
+                region={region} 
+                mapType={"satellite"}
+                >
+                    {/* <Marker coordinate={{ latitude: latitude, longitude: longitude }} /> */}
+                </MapView>
             <View style={styles.container}>
             <View style={styles.itemView}>
                 <Text style={styles.text}> NAME: </Text>
@@ -59,8 +77,6 @@ const CountryScreen = (props) => {
             <View style={styles.itemView} >
                 <Text style={styles.text}> WOEID: </Text>
                 <Text style={styles.item}> {woeid}</Text>
-                <Text style={{fontSize: 18, marginLeft: 40, backgroundColor: "#ccc"}}> CODE: </Text>
-                <Text style={styles.item}> {code}</Text>
             </View>
 
             <View style={styles.itemView} >
@@ -120,11 +136,16 @@ const styles = StyleSheet.create({
     container: {
         margin: 10,
     },
+    mapView: {
+        width: '95%',
+        alignSelf: "center",
+        marginTop: 10,
+        height: 200,
+    },
     itemView: {
         flexDirection: "row",
         margin: 2,
         backgroundColor: "#ddd"
-
     },
     text: {
         fontSize: 24,
