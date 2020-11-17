@@ -5,13 +5,15 @@ import BrandScreen from './screens/BrandScreen';
 import CountryScreen from './screens/CountryScreen';
 import HomeScreen from './screens/HomeScreen';
 import ModelScreen from './screens/ModelScreen';
+import SearchBar from './components/serachbar';
 
 const navigator = createStackNavigator({
   Home: HomeScreen,
   Brand: BrandScreen,
   Nav: Navbar,
   Model: ModelScreen,
-  Country: CountryScreen
+  Country: CountryScreen,
+  Search: SearchBar
 }, {
   initialRouteName: 'Home',
   defaultNavigationOptions: {

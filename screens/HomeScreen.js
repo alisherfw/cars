@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {View, StyleSheet, FlatList, Text, ActivityIndicator, TouchableOpacity} from 'react-native';
+import SearchBar from '../components/serachbar';
 import Navbar from '../components/navbar';
 
 const HomeScreen = (props) => {
@@ -16,6 +17,7 @@ const HomeScreen = (props) => {
 
     return(
         <View style={styles.View}>
+            <SearchBar />
             <View style={styles.container}>
             {
                 <FlatList
@@ -58,7 +60,7 @@ const HomeScreen = (props) => {
                 />  
             }
             </View>
-        <Navbar props={props} />
+        {/* <Navbar props={props} /> */}
         </View>
     )
 }
@@ -83,7 +85,7 @@ const styles = StyleSheet.create({
     },
     item: {
         flexDirection: "row",
-        borderColor: 'black',
+        borderColor: 'silver',
         borderWidth: 1,
         marginHorizontal: 5,
         marginBottom: 0,
