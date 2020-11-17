@@ -1,13 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet, FlatList, Text, ActivityIndicator, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, FlatList, Text, TouchableOpacity} from 'react-native';
 import SearchBar from '../components/serachbar';
-import Navbar from '../components/navbar';
 
 const HomeScreen = (props) => {
     const [data, setData] = useState([]);
     const [isLoading, setLoading] = useState(true);
-//https://raw.githubusercontent.com/vega/vega/master/docs/data/cars.json
-//https://raw.githubusercontent.com/matthlavacka/car-list/master/car-list.json
+
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/alisherfw/airports/master/db.json')
         .then(response => response.json())
@@ -17,7 +15,9 @@ const HomeScreen = (props) => {
 
     return(
         <View style={styles.View}>
-            <SearchBar />
+            <SearchBar 
+            
+            />
             <View style={styles.container}>
             {
                 <FlatList
@@ -72,9 +72,6 @@ const styles = StyleSheet.create({
         marginTop: 10,
         color: "#311b92"
     },
-    // View: {
-    //     backgroundColor: "#311b92"
-    // },
     name: {
         fontSize: 20,
         marginHorizontal: 10,
