@@ -59,7 +59,7 @@ const CountryScreen = (props) => {
             <View style={styles.itemView} >
                 <Text style={styles.text}> LAT: </Text>
                 <Text style={styles.item}> {lat}</Text>
-                <Text style={{fontSize: 24, marginLeft: 50, backgroundColor: "#ccc"}}> LON: </Text>
+                <Text style={{fontSize: 24, marginLeft: 50, backgroundColor: "#ddd"}}> LON: </Text>
                 <Text style={styles.item}> {lon}</Text>
             </View>
 

@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     },
     item: {
         flexDirection: "row",
-        borderColor: 'silver',
+        borderColor: 'black',
         borderWidth: 1,
         marginHorizontal: 5,
         marginBottom: 0,
