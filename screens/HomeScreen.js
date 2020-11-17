@@ -1,26 +1,23 @@
 import React, {useState, useEffect} from 'react';
 import {View, StyleSheet, FlatList, Text, ActivityIndicator, TouchableOpacity} from 'react-native';
 import SearchBar from '../components/serachbar';
-// import Navbar from '../components/navbar';
+import Navbar from '../components/navbar';
 
-const HomeScreen = ({props}) => {
-
-    const [value, setValue] = useState('');
+const HomeScreen = (props) => {
     const [data, setData] = useState([]);
-    
+    const [isLoading, setLoading] = useState(true);
+//https://raw.githubusercontent.com/vega/vega/master/docs/data/cars.json
+//https://raw.githubusercontent.com/matthlavacka/car-list/master/car-list.json
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/alisherfw/airports/master/db.json')
         .then(response => response.json())
-        .then(json => setData(json));
+        .then(json => setData(json))
+        .then(setLoading(false));
     }, []);
 
     return(
         <View style={styles.View}>
-            <SearchBar 
-                value={value}
-                onChange={setValue}
-                onValueSubmit={() => console.log(value)}
-            />
+            <SearchBar />
             <View style={styles.container}>
             {
                 <FlatList
@@ -63,6 +60,7 @@ const HomeScreen = ({props}) => {
                 />  
             }
             </View>
+        {/* <Navbar props={props} /> */}
         </View>
     )
 }
@@ -74,6 +72,9 @@ const styles = StyleSheet.create({
         marginTop: 10,
         color: "#311b92"
     },
+    // View: {
+    //     backgroundColor: "#311b92"
+    // },
     name: {
         fontSize: 20,
         marginHorizontal: 10,
