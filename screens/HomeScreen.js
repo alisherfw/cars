@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {View, StyleSheet, FlatList, Text, ActivityIndicator, TouchableOpacity} from 'react-native';
 import SearchBar from '../components/serachbar';
-import Navbar from '../components/navbar';
+// import Navbar from '../components/navbar';
 
 const HomeScreen = ({props}) => {
 
@@ -63,7 +63,6 @@ const HomeScreen = ({props}) => {
                 />  
             }
             </View>
-        {/* <Navbar props={props} /> */}
         </View>
     )
 }
@@ -75,9 +74,6 @@ const styles = StyleSheet.create({
         marginTop: 10,
         color: "#311b92"
     },
-    // View: {
-    //     backgroundColor: "#311b92"
-    // },
     name: {
         fontSize: 20,
         marginHorizontal: 10,
